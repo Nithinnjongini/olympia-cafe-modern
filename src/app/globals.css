@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #005696;
+  --color-brand-gold: #C5A059;
+  --color-brand-charcoal: #222222;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #222222;
+  --brand-blue: #005696;
+  --brand-gold: #C5A059;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
