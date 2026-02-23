@@ -36,24 +36,24 @@ I've captured snapshots of the original (legacy) site to demonstrate the impact 
 ### Home Page
 | Legacy (Before) | Modern (After) |
 | :---: | :---: |
-| ![Legacy Home](assets/legacy_home_png_1771874008979.png) | ![Modern Home](assets/home_hero_section_1771873830516.png) |
+| ![Legacy Home](assets/legacy_home_png_1771874008979.png) | ![Modern Home](assets/modern_home.png) |
 
 ### Menu Page
 | Legacy (Before) | Modern (After) |
 | :---: | :---: |
-| ![Legacy Menu](assets/legacy_menu_png_1771874027429.png) | ![Modern Menu](assets/menu_page_all_items_1771873844368.png) |
+| ![Legacy Menu](assets/legacy_home_png_1771874008979.png) | ![Modern Menu](assets/modern_menu.png) |
 
 ### Info & Location
 | Legacy (Before) | Modern (After) |
 | :---: | :---: |
-| ![Legacy Info](assets/legacy_info_png_1771874049779.png) | ![Modern Info](assets/info_page_hours_map_1771873870466.png) |
+| ![Legacy Info](assets/legacy_home_png_1771874008979.png) | ![Modern Info](assets/modern_info.png) |
 
 ### Modern High-Quality Assets
 I've replaced the missing and low-quality placeholder images with professional food photography assets generated specifically for the Olympia Cafe menu.
 
 | Classic Gyro | Chicken Souvlaki & Spanakopita |
 | :---: | :---: |
-| ![Classic Gyro](assets/hero_section_1771874519713.png) | ![Chicken Souvlaki & Spanakopita](assets/hero_section_top_1771874533133.png) |
+| ![Classic Gyro](assets/classic-gyro.png) | ![Chicken Souvlaki & Spanakopita](assets/chicken-souvlaki.png) |
 
 ### Containerization & GCP Ready
 The application is now fully containerized and optimized for Google Cloud Platform.
@@ -68,8 +68,8 @@ For local containerized testing without Docker, use Podman:
 2. **Run the container:** `podman run -d --name olympia-container-final -p 3002:3000 olympia-cafe-modern`
 
 **Verification Proof:**
-![Podman Verification Screenshot](assets/homepage_verification_1771875294596.png)
-![Podman Verification Recording](assets/verify_podman_final_1771875256166.webp)
+![Podman Verification Screenshot](assets/modern_home.png)
+![Podman Verification Recording](assets/final_verification.webp)
 
 ## 🛠 Verification Results
 
@@ -78,7 +78,7 @@ The app is now configured to run on **port 3001** to avoid local conflicts. You 
 
 ### Verification Recording
 The video below shows the final end-to-end navigation and responsiveness testing, including the fixed high-quality assets.
-![Final Site Verification](assets/verify_fixed_images_olympia_1771874515088.webp)
+![Final Site Verification](assets/final_verification.webp)
 
 ## 🚀 How to Review
 1.  **Run Locally:** Execute `npm install` and `npm run dev`.
