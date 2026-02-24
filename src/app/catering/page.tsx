@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Utensils, Calendar, Phone } from "lucide-react";
+import Image from "next/image";
 
 const cateringFeatures = [
     {
@@ -10,18 +11,21 @@ const cateringFeatures = [
         price: "$9.99 per person",
         description: "Our most popular option! Includes gyro meat, pita bread, tomatoes, onions, tzatziki sauce, and Greek salad. (Minimum 10 people)",
         icon: Users,
+        image: "/images/catering/gyro-bar.jpg",
     },
     {
         title: "Hummus Platters",
         price: "Starts at $25.99",
         description: "A variety of our 12+ homemade hummus flavors served with fresh pita and vegetables.",
         icon: Utensils,
+        image: "/images/catering/hummus-platters-v2.jpg",
     },
     {
         title: "Custom Event Planning",
         price: "Contact for Quote",
         description: "From weddings to corporate events, we'll help you design a menu that fits your needs and budget.",
         icon: Calendar,
+        image: "/images/catering/event-planning.jpg",
     }
 ];
 
@@ -31,7 +35,13 @@ export default function CateringPage() {
             {/* Hero Section */}
             <section className="bg-brand-charcoal py-32 relative overflow-hidden">
                 <div className="absolute inset-0">
-                    <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20" />
+                    <Image
+                        src="/images/catering/hero-background.jpg"
+                        alt="Catering background"
+                        fill
+                        className="object-cover opacity-20"
+                        priority
+                    />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
@@ -63,20 +73,31 @@ export default function CateringPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="p-10 rounded-3xl bg-gray-50 border border-gray-100 group hover:bg-brand-blue transition-all duration-500"
+                            className="rounded-3xl bg-white border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 text-brand-blue flex items-center justify-center mb-8 group-hover:bg-white transition-all">
-                                <service.icon className="w-8 h-8" />
+                            <div className="relative h-48 overflow-hidden">
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                />
                             </div>
-                            <h3 className="text-2xl font-display font-bold text-brand-charcoal mb-4 group-hover:text-white transition-all">
-                                {service.title}
-                            </h3>
-                            <p className="text-brand-blue font-bold mb-6 group-hover:text-brand-gold transition-all">
-                                {service.price}
-                            </p>
-                            <p className="text-gray-600 group-hover:text-blue-100 transition-all">
-                                {service.description}
-                            </p>
+                            <div className="p-10">
+                                <div className="w-16 h-16 rounded-2xl bg-brand-blue/10 text-brand-blue flex items-center justify-center mb-6">
+                                    <service.icon className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-2xl font-display font-bold text-brand-charcoal mb-4">
+                                    {service.title}
+                                </h3>
+                                <p className="text-brand-blue font-bold mb-6">
+                                    {service.price}
+                                </p>
+                                <p className="text-gray-600">
+                                    {service.description}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
